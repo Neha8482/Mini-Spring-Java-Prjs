@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+<bean class="com.xoriant.beans.Employee" id="employee">
+<property name="empid" value="1"></property>
+<property name="empName" value = "Nisha"></property>
+</bean>
+<bean class="com.xoriant.beans.Employee" id="employee2">
+<property name="empid" value="2"></property>
+<property name="empName" value = "Amruta"></property>
+<property name="address" ref="address1"></property>
+</bean>
+<bean class="com.xoriant.beans.Address" id="address1" scope="prototype">
+<constructor-arg name="city" value="Pune"></constructor-arg>
+<constructor-arg name= "pincode" value = "431001"></constructor-arg>
+</bean>
+<bean class="com.xoriant.beans.Customer" id="customer1">
+<constructor-arg name="customerid" value="2"></constructor-arg>
+<constructor-arg name= "customerName" value = "Hari"></constructor-arg>
+<constructor-arg name="address" ref="address1"></constructor-arg>
+</bean>
+</beans>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+<bean class="com.xoriant.beans.Employee" id="employee1">
+<constructor-arg name="empid" value="1"></constructor-arg>
+<constructor-arg name="techs">
+<set>
+<value>Java</value>
+<value>Python</value>
+<value>Spring</value>
+</set>
+</constructor-arg>
+</bean>
+<bean class="com.xoriant.beans.Employee" id="employee2">
+<constructor-arg name="empid" value="2"></constructor-arg>
+<constructor-arg name="techs">
+<set>
+<value>Hibernate</value>
+<value>AWS</value>
+<value>Spring</value>
+</set>
+</constructor-arg>
+</bean>
+<bean class="com.xoriant.beans.Employee" id="employee3">
+<constructor-arg name="empid" value="3"></constructor-arg>
+<constructor-arg name="techs">
+<set>
+<value>React</value>
+<value>Angular</value>
+</set>
+</constructor-arg>
+</bean>
+
+<bean class="com.xoriant.beans.Employee" id="employee4">
+<constructor-arg name="empid" value="4"></constructor-arg>
+<constructor-arg name="techs">
+<set>
+<value>HTML</value>
+<value>React</value>
+<value>Js</value>
+</set>
+</constructor-arg>
+</bean>
+<bean class="com.xoriant.beans.Employee" id="employee5">
+<constructor-arg name="empid" value="5"></constructor-arg>
+<constructor-arg name="techs">
+<set>
+<value>React</value>
+<value>Angular</value>
+</set>
+</constructor-arg>
+</bean>
+<bean class="com.xoriant.beans.Employee" id="employee6">
+<constructor-arg name="empid" value="6"></constructor-arg>
+<constructor-arg name="techs">
+<set>
+<value>ML</value>
+<value>Data Science</value>
+</set>
+</constructor-arg>
+</bean>
+
+
+<bean class="com.xoriant.beans.Project" id="project1">
+<constructor-arg name="projectid" value="1"></constructor-arg>
+<constructor-arg name="employees">
+<set>
+<ref bean="employee1"/>
+<ref bean="employee2"/>
+</set>
+</constructor-arg>
+</bean>
+<bean class="com.xoriant.beans.Project" id="project2">
+<constructor-arg name="projectid" value="2"></constructor-arg>
+<constructor-arg name="employees">
+<set>
+<ref bean="employee3"/>
+<ref bean="employee4"/>
+</set>
+</constructor-arg>
+</bean>
+<bean class="com.xoriant.beans.Project" id="project3">
+<constructor-arg name="projectid" value="3"></constructor-arg>
+<constructor-arg name="employees">
+<set>
+<ref bean="employee5"/>
+<ref bean="employee6"/>
+</set>
+</constructor-arg>
+</bean>
+
+<bean class="com.xoriant.beans.Department" id="dept1">
+<property name="deptid" value="101"></property>
+<property name="deptName" value="Big Data"></property>
+<property name="projects">
+<map>
+<entry key-ref="project1" value="12"></entry>
+<entry key-ref="project2" value="6"></entry>
+</map>
+</property>
+</bean>
+<bean class="com.xoriant.beans.Department" id="dept2">
+<property name="deptid" value="102"></property>
+<property name="deptName" value="HR"></property>
+<property name="projects">
+<map>
+<entry key-ref="project3" value="8"></entry>
+</map>
+</property>
+</bean>
+
+<bean class="com.xoriant.beans.Company" id="company">
+<constructor-arg name="name" value="xoriant"></constructor-arg>
+<constructor-arg name="dept">
+<set>
+<ref bean="dept1"/>
+<ref bean="dept2"/>
+</set>
+</constructor-arg>
+</bean>
+</beans>

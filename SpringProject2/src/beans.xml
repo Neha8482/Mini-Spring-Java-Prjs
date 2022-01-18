@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+<context:annotation-config/>
+
+<bean class="com.xoriant.beans.Address" id="address1">
+<constructor-arg name="city" value="Pune"></constructor-arg>
+<constructor-arg name="pincode" value="1212"></constructor-arg>
+</bean>
+
+<bean class="com.xoriant.beans.Customer" id="customer" autowire="constructor">
+<constructor-arg name="customerid" value="1"></constructor-arg>
+<constructor-arg name="customerName" value="Neha"></constructor-arg>
+</bean>
+
+<bean class ="com.xoriant.beans.Student" autowire="byType">
+<property name="rollno" value = "1"></property>
+<property name="name" value ="Priya"></property>
+</bean>
+
+<bean class="com.xoriant.beans.Product" id="product" autowire-candidate="true">
+<constructor-arg name="productid" value="11"></constructor-arg>
+<constructor-arg name="productname" value="Headphones"></constructor-arg>
+</bean>
+
+<bean class="com.xoriant.beans.Order" autowire="constructor">
+<constructor-arg name="orderid" value="1222"></constructor-arg>
+</bean>
+
+<bean class="com.xoriant.beans.Project" id="project">
+<constructor-arg name="projectName" value="project1"></constructor-arg>
+</bean>
+<bean class="com.xoriant.beans.Project" id="project123">
+<constructor-arg name="projectName" value="project2"></constructor-arg>
+</bean>
+
+<bean class="com.xoriant.beans.Company" id="company">
+<property name="companyName" value="Xoriant"></property>
+</bean>
+
+<bean class="com.xoriant.beans.College" id="college">
+<constructor-arg name="collegeName" value="ABC"></constructor-arg>
+ </bean>
+
+
+
+</beans>

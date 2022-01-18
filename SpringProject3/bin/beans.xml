@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+<bean class="com.xoriant.beans.Employee" id="employee">
+<property name="empId" value="12" ></property>
+<property name="empName" value="Hari"></property>
+<property name="techStack">
+<list>
+<value>Java</value>
+<value>Spring</value>
+<value>Hibernate</value>
+</list>
+</property>
+<property name="techs">
+<set>
+<value>Python</value>
+<value>Java</value>
+<value>C++</value>
+</set>
+</property>
+<property name="address">
+<set>
+<ref bean="permAddress"/>
+<ref bean="tempAddress"/>
+</set>
+</property>
+</bean>
+
+<bean class="com.xoriant.beans.Address" id="tempAddress">
+<constructor-arg name="city" value="Pune"></constructor-arg>
+<constructor-arg name="pincode" value="1313"></constructor-arg>
+</bean>
+<bean class="com.xoriant.beans.Address" id="permAddress">
+<constructor-arg name="city" value="Mumbai"></constructor-arg>
+<constructor-arg name="pincode" value="78886"></constructor-arg>
+</bean>
+
+<bean class="com.xoriant.beans.Order" id="order1">
+<property name="orderid" value="1"></property>
+<property name="orderDetails">
+<map>
+<entry key="12">
+<ref bean="product"/>
+</entry>
+<entry key="34">
+<ref bean="product"/>
+</entry>
+</map>
+</property>
+</bean>
+
+<bean class="com.xoriant.beans.Product" id="product">
+<constructor-arg name="productid" value="232"></constructor-arg>
+<constructor-arg name="productName" value="Earphones"></constructor-arg>
+</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+

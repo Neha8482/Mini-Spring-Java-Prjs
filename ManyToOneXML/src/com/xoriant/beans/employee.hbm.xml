@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">
+
+<hibernate-mapping>
+<class name="com.xoriant.beans.Employee" table="empdept_1">
+<id name="empId" column="emp_id">
+<generator class="increment"></generator>
+</id>
+<property name="name" column="emp_name"></property>
+<many-to-one name="department" column="dept_id" cascade="all"></many-to-one>
+</class>
+</hibernate-mapping>
+

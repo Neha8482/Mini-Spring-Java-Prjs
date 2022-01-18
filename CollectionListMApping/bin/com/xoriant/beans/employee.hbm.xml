@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">
+         
+<hibernate-mapping>
+<class name="com.xoriant.beans.Employee" table="emp_list_1">
+<id name="id">
+<generator class="increment"></generator>
+</id>
+<property name="name"></property>
+
+<list name="technologyStack" table="techstack_list">
+<key column="eid"></key>
+<index column="i"></index>
+<element column="technology" type="string"></element>
+</list>
+</class>
+</hibernate-mapping>

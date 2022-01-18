@@ -1,0 +1,10 @@
+Sony:10.00
+Star Plus:8.00
+Colors:5.00
+Zee:10.00
+News:5.00
+Kids Basic:5.00
+Kids Gold:8.00
+Kids Platinum:10.00
+Knowledge:7.00
+Music:10.00

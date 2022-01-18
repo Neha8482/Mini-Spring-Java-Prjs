@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">
+
+<hibernate-mapping>
+<class name="com.xoriant.beans.Employee" table="empdata_6">
+<id name="empId">
+<generator class="increment"></generator>
+</id>
+<property name="name" column="emp_name"></property>
+<property name="designation" column="emp_designation"></property>
+</class>
+
+<query name="findEmployeeByName">
+<![CDATA[from Employee e where e.name = :name]]>
+</query>
+</hibernate-mapping>

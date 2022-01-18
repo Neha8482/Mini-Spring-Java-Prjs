@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">
+ 
+ <hibernate-mapping>
+ <class name="com.xoriant.beans.Item" table="item_1">
+ <id name="itemId" column="item_id">
+ <generator class="increment"></generator>
+ </id>
+ <property name="description" column="description"></property>
+ <property name="cost" column="cost"></property>
+ <set name="carts" table="cart_items" cascade="all">
+ <key column="item_id"/>
+ <many-to-many class="com.xoriant.beans.Cart"
+ column ="cart_id"/>
+ </set>
+ </class>
+ </hibernate-mapping>

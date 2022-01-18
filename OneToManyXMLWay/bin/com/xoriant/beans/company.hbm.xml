@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">
+
+<hibernate-mapping>
+<class name="com.xoriant.beans.Company" table="companyemps_1">
+<id name="id">
+<generator class="increment"></generator>
+</id>
+<property name="company_name"></property>
+<set name="employees" cascade="all">
+<key column="company_id"></key>
+<one-to-many class="com.xoriant.beans.Employee"/>
+</set>
+</class>
+<class name="com.xoriant.beans.Employee" table="empscompany_1">
+<id name="ID">
+<generator class="increment"></generator>
+</id>
+<property name="name"></property>
+</class>
+</hibernate-mapping>

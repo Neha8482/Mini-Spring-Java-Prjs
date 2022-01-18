@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">
+
+<hibernate-mapping>
+<class name="com.xoriant.beans.Address" table="addremp_1">
+<id name="addressId">
+<column name="employeeId"/>
+<generator class="foreign">
+<param name="property">employee</param>
+</generator>
+</id>
+<property name="city"></property>
+<property name="pincode"></property>
+
+<one-to-one name="employee" class = "com.xoriant.beans.Employee"></one-to-one>
+</class>
+</hibernate-mapping>
